@@ -1,0 +1,168 @@
+[
+  {
+    "name": "Auto Timetable Bid",
+    "description": "UTAR auto timetable bid robot",
+    "url": "https://github.com/wayuyuwa/auto_timetable_bid",
+    "fork": false,
+    "image": "https://opengraph.githubassets.com/1/wayuyuwa/auto_timetable_bid",
+    "technologies": ["Python", "Selenium", "BeautifulSoup", "Requests", "PyQt5"],
+    "highlights": [
+      "Automates the process of bidding for courses in UTAR's timetable system.",
+      "Utilizes web scraping and browser automation techniques.",
+      "Features a user-friendly GUI for easy interaction."
+    ],
+    "show": true
+  },
+  {
+    "name": "SOC and RUL Prediction via EIS",
+    "description": "My FYP which is related to machine learning and battery management system",
+    "url": "https://github.com/Chin-Wai-Yee/SOC-and-RULPrediction-via-EIS",
+    "fork": false,
+    "image": "https://opengraph.githubassets.com/1/chin-wai-yee/SOC-and-RULPrediction-via-EIS",
+    "technologies": ["Python", "Machine Learning", "TensorFlow", "Keras", "NumPy", "Pandas"],
+    "highlights": [
+      
+    ],
+    "show": true
+  },
+  {
+    "name": "ai-image-detection",
+    "description": null,
+    "url": "https://github.com/Chin-Wai-Yee/ai-image-detection",
+    "fork": false,
+    "image": "https://opengraph.githubassets.com/1/chin-wai-yee/ai-image-detection",
+    "technologies": [],
+    "highlights": [],
+    "show": false
+  },
+  {
+    "name": "UCCD3243-SERVER-SIDE-WEB-APPLICATIONS-DEVELOPMENT-TUTORIAL",
+    "description": null,
+    "url": "https://github.com/Chin-Wai-Yee/UCCD3243-SERVER-SIDE-WEB-APPLICATIONS-DEVELOPMENT-TUTORIAL",
+    "fork": false,
+    "image": "https://opengraph.githubassets.com/1/chin-wai-yee/UCCD3243-SERVER-SIDE-WEB-APPLICATIONS-DEVELOPMENT-TUTORIAL",
+    "technologies": [],
+    "highlights": [],
+    "show": false
+  },
+  {
+    "name": "Server-Side-Dev-Assignment",
+    "description": null,
+    "url": "https://github.com/Chin-Wai-Yee/Server-Side-Dev-Assignment",
+    "fork": false,
+    "image": "https://opengraph.githubassets.com/1/chin-wai-yee/Server-Side-Dev-Assignment",
+    "technologies": [],
+    "highlights": [],
+    "show": true
+  },
+  {
+    "name": "MathLab",
+    "description": null,
+    "url": "https://github.com/Chin-Wai-Yee/MathLab",
+    "fork": false,
+    "image": "https://opengraph.githubassets.com/1/chin-wai-yee/MathLab",
+    "technologies": [],
+    "highlights": [],
+    "show": true
+  },
+  {
+    "name": "Essay_Writing_Assistant",
+    "description": null,
+    "url": "https://github.com/Chin-Wai-Yee/Essay_Writing_Assistant",
+    "fork": false,
+    "image": "https://opengraph.githubassets.com/1/chin-wai-yee/Essay_Writing_Assistant",
+    "technologies": [],
+    "highlights": [],
+    "show": true
+  },
+  {
+    "name": "AIT_assignment",
+    "description": null,
+    "url": "https://github.com/Chin-Wai-Yee/AIT_assignment",
+    "fork": false,
+    "image": "https://opengraph.githubassets.com/1/chin-wai-yee/AIT_assignment",
+    "technologies": [],
+    "highlights": [],
+    "show": false
+  },
+  {
+    "name": "genetic-algorithm",
+    "description": "This repo try to implement the genetic algorithm to optimize benchmarking functions",
+    "url": "https://github.com/Chin-Wai-Yee/genetic-algorithm",
+    "fork": false,
+    "image": "https://opengraph.githubassets.com/1/chin-wai-yee/genetic-algorithm",
+    "technologies": [],
+    "highlights": [],
+    "show": true
+  },
+  {
+    "name": "frontend-website-development-assignment",
+    "description": null,
+    "url": "https://github.com/Chin-Wai-Yee/frontend-website-development-assignment",
+    "fork": false,
+    "image": "https://opengraph.githubassets.com/1/chin-wai-yee/frontend-website-development-assignment",
+    "technologies": [],
+    "highlights": [],
+    "show": true
+  },
+  {
+    "name": "Chin-Wai-Yee",
+    "description": "Config files for my GitHub profile.",
+    "url": "https://github.com/Chin-Wai-Yee/Chin-Wai-Yee",
+    "fork": false,
+    "image": "https://opengraph.githubassets.com/1/chin-wai-yee/Chin-Wai-Yee",
+    "technologies": [],
+    "highlights": [],
+    "show": false
+  },
+  {
+    "name": "UCCD2044-Object-Oriented-Programming-Practices-Assignment",
+    "description": null,
+    "url": "https://github.com/Chin-Wai-Yee/UCCD2044-Object-Oriented-Programming-Practices-Assignment",
+    "fork": false,
+    "image": "https://opengraph.githubassets.com/1/chin-wai-yee/UCCD2044-Object-Oriented-Programming-Practices-Assignment",
+    "technologies": [],
+    "highlights": [],
+    "show": false
+  },
+  {
+    "name": "hospital_management_system",
+    "description": null,
+    "url": "https://github.com/Chin-Wai-Yee/hospital_management_system",
+    "fork": false,
+    "image": "https://opengraph.githubassets.com/1/chin-wai-yee/hospital_management_system",
+    "technologies": [],
+    "highlights": [],
+    "show": false
+  },
+  {
+    "name": "DataStruct_assignment_2",
+    "description": null,
+    "url": "https://github.com/Chin-Wai-Yee/DataStruct_assignment_2",
+    "fork": false,
+    "image": "https://opengraph.githubassets.com/1/chin-wai-yee/DataStruct_assignment_2",
+    "technologies": [],
+    "highlights": [],
+    "show": false
+  },
+  {
+    "name": "DataStruct_assignment_1",
+    "description": "Assignment 1",
+    "url": "https://github.com/Chin-Wai-Yee/DataStruct_assignment_1",
+    "fork": false,
+    "image": "https://opengraph.githubassets.com/1/chin-wai-yee/DataStruct_assignment_1",
+    "technologies": [],
+    "highlights": [],
+    "show": false
+  },
+  {
+    "name": "UCCD1004_Assignment2",
+    "description": "Repo for UCCD1004 Programming Assignment 2",
+    "url": "https://github.com/Chin-Wai-Yee/UCCD1004_Assignment2",
+    "fork": false,
+    "image": "https://opengraph.githubassets.com/1/chin-wai-yee/UCCD1004_Assignment2",
+    "technologies": [],
+    "highlights": [],
+    "show": false
+  }
+]
