@@ -25,20 +25,6 @@ const { navigateTo } = useNavigation()
         a keen eye for detail, I'm excited to start my professional journey creating 
         user-friendly interfaces and robust solutions.
       </p>
-      <div class="quick-stats">
-        <div class="stat-item">
-          <span class="stat-number">3.67</span>
-          <span class="stat-label">First Class GPA</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">10+</span>
-          <span class="stat-label">Projects Completed</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">8+</span>
-          <span class="stat-label">Technologies</span>
-        </div>
-      </div>
     </div>
   </div>
 </template>

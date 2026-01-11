@@ -1,25 +1,8 @@
 <script setup>
-import { computed } from 'vue'
 import { profile } from './composables/usePortfolioData'
-import { useNavigation } from './composables/useNavigation'
-import HomeView from './views/HomeView.vue'
-import ExperienceView from './views/ExperienceView.vue'
-import ProjectsView from './views/ProjectsView.vue'
-import SkillsView from './views/SkillsView.vue'
-import ContactView from './views/ContactView.vue'
+import { useRoute } from 'vue-router'
 
-const { currentPage, navigateTo } = useNavigation()
-
-const currentView = computed(() => {
-  const views = {
-    home: HomeView,
-    experience: ExperienceView,
-    projects: ProjectsView,
-    skills: SkillsView,
-    contact: ContactView
-  }
-  return views[currentPage.value] || HomeView
-})
+const route = useRoute()
 </script>
 
 <template>
@@ -28,44 +11,14 @@ const currentView = computed(() => {
     <header class="header">
       <div class="container">
         <div class="nav-brand">
-          <h1 class="name" @click="navigateTo('home')">{{ profile.name }}</h1>
+          <router-link to="/" class="name">{{ profile.name }}</router-link>
         </div>
         <nav class="nav-menu">
-          <button 
-            @click="navigateTo('home')" 
-            :class="{ active: currentPage === 'home' }"
-            class="nav-link"
-          >
-            Home
-          </button>
-          <button 
-            @click="navigateTo('experience')" 
-            :class="{ active: currentPage === 'experience' }"
-            class="nav-link"
-          >
-            Experience
-          </button>
-          <button 
-            @click="navigateTo('projects')" 
-            :class="{ active: currentPage === 'projects' }"
-            class="nav-link"
-          >
-            Projects
-          </button>
-          <button 
-            @click="navigateTo('skills')" 
-            :class="{ active: currentPage === 'skills' }"
-            class="nav-link"
-          >
-            Skills
-          </button>
-          <button 
-            @click="navigateTo('contact')" 
-            :class="{ active: currentPage === 'contact' }"
-            class="nav-link"
-          >
-            Contact
-          </button>
+          <router-link to="/" class="nav-link">Home</router-link>
+          <router-link to="/experience" class="nav-link">Experience</router-link>
+          <router-link to="/projects" class="nav-link">Projects</router-link>
+          <router-link to="/skills" class="nav-link">Skills</router-link>
+          <router-link to="/contact" class="nav-link">Contact</router-link>
         </nav>
       </div>
     </header>
@@ -73,9 +26,11 @@ const currentView = computed(() => {
     <!-- Page Content -->
     <main class="main-content">
       <div class="container">
-        <Transition name="page" mode="out-in">
-          <component :is="currentView" :key="currentPage" />
-        </Transition>
+        <router-view v-slot="{ Component }">
+          <Transition name="page" mode="out-in">
+            <component :is="Component" :key="route.path" />
+          </Transition>
+        </router-view>
       </div>
     </main>
 
@@ -177,6 +132,8 @@ body {
   font-size: 1rem;
   font-weight: 500;
   transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .nav-link:hover {
@@ -184,10 +141,20 @@ body {
   border-color: rgba(255, 255, 255, 0.3);
 }
 
-.nav-link.active {
+.nav-link.router-link-active {
   background: white;
   color: #667eea;
   border-color: white;
+}
+
+.name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+  transition: opacity 0.3s ease;
+  color: white;
+  text-decoration: none;
+  display: block;
 }
 
 /* Main Content */
