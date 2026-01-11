@@ -4,5 +4,9 @@ import { routes, scrollBehavior } from './router'
 
 export const createApp = ViteSSG(
   App,
-  { routes, scrollBehavior },
+  { 
+    routes, 
+    scrollBehavior,
+    base: import.meta.env.BASE_URL 
+  },
 )
