@@ -14,14 +14,15 @@
     "show": true
   },
   {
-    "name": "SOC and RUL Prediction via EIS",
-    "description": "My FYP which is related to machine learning and battery management system",
+    "name": "Battery Health Prediction",
+    "description": "Final year project for battery State of Charge and State of Health estimation using Electrochemical Impedance Spectroscopy data.",
     "url": "https://github.com/Chin-Wai-Yee/SOC-and-RULPrediction-via-EIS",
     "fork": false,
     "image": "https://opengraph.githubassets.com/1/chin-wai-yee/SOC-and-RULPrediction-via-EIS",
-    "technologies": ["Python", "Machine Learning", "TensorFlow", "Keras", "NumPy", "Pandas"],
+    "technologies": ["Python", "Random Forest", "CNN", "Transformer", "Model Quantization"],
     "highlights": [
-      
+      "Evaluated Random Forest, CNN and Transformer models for battery health estimation.",
+      "Applied pruning and quantization to reduce model size and improve inference efficiency."
     ],
     "show": true
   },

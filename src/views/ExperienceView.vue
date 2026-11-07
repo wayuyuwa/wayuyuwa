@@ -7,7 +7,7 @@ import { experiences } from '../composables/usePortfolioData'
     <h1 class="page-title">Experience</h1>
     <div class="timeline">
       <div 
-        v-for="exp in experiences.slice().reverse()" 
+        v-for="exp in experiences" 
         :key="exp.id" 
         class="timeline-item"
         :class="exp.type"
@@ -36,36 +36,29 @@ import { experiences } from '../composables/usePortfolioData'
 
 <style scoped>
 .experience-page {
-  padding: 40px 20px;
+  padding: 35px 0;
   max-width: 900px;
   margin: 0 auto;
   min-height: calc(100vh - 200px);
 }
 
 .page-title {
-  font-size: 3rem;
-  margin-bottom: 50px;
-  color: #667eea;
-  text-align: center;
-  position: relative;
-  padding-bottom: 20px;
+  font-family: var(--serif);
+  font-size: clamp(2.6rem, 6vw, 4.6rem);
+  line-height: 1;
+  margin: 0 0 45px;
 }
 
 .page-title::after {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 2px;
+  display: none;
 }
 
 .timeline {
   position: relative;
-  padding-left: 40px;
+  padding-left: 24px;
 }
 
 .timeline::before {
@@ -74,8 +67,8 @@ import { experiences } from '../composables/usePortfolioData'
   left: 0;
   top: 0;
   bottom: 0;
-  width: 3px;
-  background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+  width: 1px;
+  background: var(--line);
 }
 
 .timeline-item {
@@ -86,32 +79,31 @@ import { experiences } from '../composables/usePortfolioData'
 
 .timeline-marker {
   position: absolute;
-  left: -46px;
+  left: -31px;
   top: 5px;
-  width: 15px;
-  height: 15px;
-  background: #667eea;
-  border: 3px solid white;
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+  border: 4px solid var(--paper);
   border-radius: 50%;
-  box-shadow: 0 0 0 3px #667eea;
+  box-shadow: 0 0 0 1px var(--accent);
 }
 
 .timeline-item.education .timeline-marker {
-  background: #764ba2;
-  box-shadow: 0 0 0 3px #764ba2;
+  background: var(--ink);
+  box-shadow: 0 0 0 1px var(--ink);
 }
 
 .timeline-content {
-  background: white;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background: var(--surface);
+  padding: 26px 30px;
+  border: 1px solid var(--line);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .timeline-content:hover {
   transform: translateX(5px);
-  box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2);
+  box-shadow: 6px 6px 0 rgba(200, 75, 49, 0.12);
 }
 
 .timeline-header {
@@ -125,12 +117,12 @@ import { experiences } from '../composables/usePortfolioData'
 
 .position {
   font-size: 1.4rem;
-  color: #333;
+  color: var(--ink);
   font-weight: 600;
 }
 
 .period {
-  color: #667eea;
+  color: var(--accent);
   font-weight: 500;
   font-size: 0.95rem;
 }
@@ -139,7 +131,7 @@ import { experiences } from '../composables/usePortfolioData'
   display: flex;
   gap: 15px;
   margin-bottom: 15px;
-  color: #666;
+  color: var(--muted);
   font-size: 0.95rem;
 }
 
@@ -149,7 +141,7 @@ import { experiences } from '../composables/usePortfolioData'
 
 .description {
   margin-bottom: 15px;
-  color: #555;
+  color: var(--muted);
 }
 
 .achievements {
@@ -161,14 +153,14 @@ import { experiences } from '../composables/usePortfolioData'
   padding-left: 25px;
   margin-bottom: 8px;
   position: relative;
-  color: #555;
+  color: var(--muted);
 }
 
 .achievements li::before {
-  content: '✓';
+  content: '—';
   position: absolute;
   left: 0;
-  color: #667eea;
+  color: var(--accent);
   font-weight: bold;
 }
 
@@ -191,5 +183,7 @@ import { experiences } from '../composables/usePortfolioData'
   .timeline-header {
     flex-direction: column;
   }
+
+  .timeline-content { padding: 22px; }
 }
 </style>

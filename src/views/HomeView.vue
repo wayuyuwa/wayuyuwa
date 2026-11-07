@@ -7,194 +7,47 @@ const { navigateTo } = useNavigation()
 
 <template>
   <div class="home">
-    <div class="hero">
-      <h1 class="hero-name">{{ profile.name }}</h1>
-      <p class="hero-title">{{ profile.title }}</p>
-      <p class="hero-tagline">Fresh graduate eager to build innovative solutions with modern technologies</p>
+    <section class="hero">
+      <p class="eyebrow">Application engineering / Java / event-driven systems</p>
+      <h1>Building reliable paths for critical data.</h1>
+      <p class="hero-title">I am a {{ profile.title.toLowerCase() }} working on banking data synchronization.</p>
+      <p class="hero-tagline">I build and troubleshoot backend services where Kafka events, database consistency and production operations meet.</p>
       <div class="hero-actions">
-        <button @click="navigateTo('contact')" class="btn btn-primary">Get In Touch</button>
-        <a :href="'https://' + profile.github" target="_blank" class="btn btn-secondary">View GitHub</a>
+        <button @click="navigateTo('experience')" class="btn btn-primary">View experience <span>-></span></button>
       </div>
-    </div>
-    
-    <div class="about-section">
-      <h2 class="section-title">About Me</h2>
-      <p class="about-text">
-        I'm a fresh graduate passionate about full-stack development with hands-on experience 
-        in building web applications. With a strong foundation in modern technologies and 
-        a keen eye for detail, I'm excited to start my professional journey creating 
-        user-friendly interfaces and robust solutions.
-      </p>
+    </section>
+
+    <div class="home-grid">
+      <section class="about-section">
+        <p class="eyebrow">Current focus</p>
+        <h2>Backend systems that stay understandable under pressure.</h2>
+        <p class="about-text">On the Stand-In Core banking project at Hitachi eBworx, I work across Java/Spring Boot services, Kafka CDC flows and PostgreSQL persistence. My work spans implementation, failure diagnosis, controlled recovery and deployment operations.</p>
+        <a :href="'https://' + profile.github" target="_blank" class="text-link">Explore GitHub <span>-></span></a>
+      </section>
+
     </div>
   </div>
 </template>
 
 <style scoped>
-.home {
-  min-height: calc(100vh - 200px);
-}
-
-.hero {
-  text-align: center;
-  padding: 80px 20px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  border-radius: 20px;
-  margin-bottom: 60px;
-}
-
-.hero-name {
-  font-size: 3.5rem;
-  margin-bottom: 15px;
-  font-weight: 700;
-  animation: fadeInUp 0.8s ease;
-}
-
-.hero-title {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-  opacity: 0.95;
-  animation: fadeInUp 0.8s ease 0.2s both;
-}
-
-.hero-tagline {
-  font-size: 1.2rem;
-  margin-bottom: 40px;
-  opacity: 0.9;
-  animation: fadeInUp 0.8s ease 0.4s both;
-}
-
-.hero-actions {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  animation: fadeInUp 0.8s ease 0.6s both;
-}
-
-.btn {
-  padding: 12px 30px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  font-size: 1rem;
-  border: none;
-  cursor: pointer;
-}
-
-.btn-primary {
-  background: white;
-  color: #667eea;
-}
-
-.btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}
-
-.btn-secondary {
-  background: transparent;
-  color: white;
-  border: 2px solid white;
-}
-
-.btn-secondary:hover {
-  background: white;
-  color: #667eea;
-}
-
-.about-section {
-  padding: 40px 20px;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.section-title {
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-  color: #667eea;
-  text-align: center;
-  position: relative;
-  padding-bottom: 15px;
-}
-
-.section-title::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 4px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 2px;
-}
-
-.about-text {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #555;
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-.quick-stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
-}
-
-.stat-item {
-  text-align: center;
-  padding: 30px 20px;
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.stat-item:hover {
-  transform: translateY(-5px);
-}
-
-.stat-number {
-  display: block;
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #667eea;
-  margin-bottom: 10px;
-}
-
-.stat-label {
-  display: block;
-  font-size: 1rem;
-  color: #666;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+.home { min-height: calc(100vh - 180px); }
+.hero { max-width: 930px; padding: 70px 0 80px; border-bottom: 1px solid var(--line); }
+.eyebrow { color: var(--accent); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+h1 { max-width: 800px; font-family: var(--serif); font-size: clamp(3rem, 7vw, 6.4rem); line-height: 0.98; letter-spacing: -0.04em; margin: 20px 0; }
+.hero-title { max-width: 620px; font-size: 1.25rem; line-height: 1.45; margin-bottom: 14px; }
+.hero-tagline { max-width: 580px; color: var(--muted); font-size: 1rem; margin-bottom: 34px; }
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn { padding: 12px 18px; border: 1px solid var(--ink); text-decoration: none; font-size: 0.82rem; font-weight: 700; transition: background 0.2s ease, color 0.2s ease; }
+.btn-primary { background: var(--ink); color: white; }
+.btn-primary:hover { background: var(--accent); border-color: var(--accent); }
+.home-grid { padding: 65px 0; }
+h2 { max-width: 560px; font-family: var(--serif); font-size: 2.35rem; line-height: 1.05; margin: 18px 0 20px; }
+.about-text { max-width: 620px; color: var(--muted); line-height: 1.8; margin-bottom: 22px; }
+.text-link { color: var(--accent); font-weight: 700; text-decoration: none; }
 @media (max-width: 768px) {
-  .hero-name {
-    font-size: 2.5rem;
-  }
-  
-  .hero-title {
-    font-size: 1.4rem;
-  }
-  
-  .hero-tagline {
-    font-size: 1rem;
-  }
+  .hero { padding: 48px 0 55px; }
+  h1 { font-size: 3.4rem; }
+  .home-grid { padding: 45px 0; }
+  h2 { font-size: 2rem; }
 }
 </style>

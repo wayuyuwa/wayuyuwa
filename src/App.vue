@@ -7,12 +7,15 @@ const route = useRoute()
 
 <template>
   <div class="portfolio">
-    <!-- Header Navigation -->
     <header class="header">
       <div class="container">
-        <div class="nav-brand">
-          <router-link to="/" class="name">{{ profile.name }}</router-link>
-        </div>
+        <router-link to="/" class="nav-brand">
+          <span class="brand-mark">CY</span>
+          <span>
+          <strong class="name">{{ profile.name }}</strong>
+          <small>{{ profile.title }}</small>
+          </span>
+        </router-link>
         <nav class="nav-menu">
           <router-link to="/" class="nav-link">Home</router-link>
           <router-link to="/experience" class="nav-link">Experience</router-link>
@@ -23,7 +26,6 @@ const route = useRoute()
       </div>
     </header>
 
-    <!-- Page Content -->
     <main class="main-content">
       <div class="container">
         <router-view v-slot="{ Component }">
@@ -34,10 +36,9 @@ const route = useRoute()
       </div>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
       <div class="container">
-        <p>&copy;  {{ new Date().getFullYear() }} {{ profile.name }}. All rights reserved.</p>
+        <p>{{ profile.name }} <span>/</span> Backend application engineer</p>
         <div class="footer-links">
           <a :href="'https://' + profile.linkedin" target="_blank">LinkedIn</a>
           <a :href="'https://' + profile.github" target="_blank">GitHub</a>
@@ -48,22 +49,40 @@ const route = useRoute()
 </template>
 
 <style>
+:root {
+  --ink: #17211b;
+  --muted: #647069;
+  --paper: #f5f4ef;
+  --surface: #fffefa;
+  --line: #d7ddd4;
+  --accent: #c84b31;
+  --accent-dark: #9c3422;
+  --serif: Georgia, 'Times New Roman', serif;
+  --sans: 'Trebuchet MS', 'Segoe UI', sans-serif;
+}
+
 body {
   margin: 0;
   padding: 0;
+  background: var(--paper);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
 }
 </style>
 
 <style scoped>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .portfolio {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
+  font-family: var(--sans);
+  color: var(--ink);
   line-height: 1.6;
   min-height: 100vh;
   display: flex;
@@ -71,7 +90,7 @@ body {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1160px;
   margin: 0 auto;
   padding: 0 20px;
   width: 100%;
@@ -79,10 +98,9 @@ body {
 
 /* Header & Navigation */
 .header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  padding: 20px 0;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background: rgba(245, 244, 239, 0.94);
+  border-bottom: 1px solid var(--line);
+  padding: 16px 0;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -93,27 +111,45 @@ body {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 28px;
 }
 
 .nav-brand {
-  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  background: var(--accent);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
 }
 
 .name {
-  font-size: 1.8rem;
+  display: block;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.05rem;
   font-weight: 700;
-  margin-bottom: 5px;
-  transition: opacity 0.3s ease;
+  line-height: 1.1;
+  text-decoration: none;
 }
 
-.name:hover {
-  opacity: 0.8;
-}
-
-.tagline {
-  font-size: 0.9rem;
-  opacity: 0.9;
+.nav-brand small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .nav-menu {
@@ -123,44 +159,27 @@ body {
 }
 
 .nav-link {
-  background: transparent;
-  color: white;
-  border: 2px solid transparent;
-  padding: 10px 20px;
-  border-radius: 25px;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  display: inline-block;
-}
-
-.nav-link:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3);
-}
-
-.nav-link.router-link-active {
-  background: white;
-  color: #667eea;
-  border-color: white;
-}
-
-.name {
-  font-size: 1.8rem;
+  color: var(--muted);
+  padding: 7px 0;
+  border-bottom: 2px solid transparent;
+  font-size: 0.8rem;
   font-weight: 700;
-  margin-bottom: 5px;
-  transition: opacity 0.3s ease;
-  color: white;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: color 0.2s ease, border-color 0.2s ease;
   text-decoration: none;
-  display: block;
 }
 
-/* Main Content */
+.nav-link:hover,
+.nav-link.router-link-active {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
 .main-content {
   flex: 1;
-  padding: 20px 0;
+  padding: 30px 0 70px;
+  background: radial-gradient(circle at 90% 5%, rgba(200, 75, 49, 0.08), transparent 28rem);
 }
 
 /* Page Transitions */
@@ -181,9 +200,9 @@ body {
 
 /* Footer */
 .footer {
-  background: #333;
-  color: white;
-  padding: 30px 0;
+  background: var(--ink);
+  color: #dce5dc;
+  padding: 24px 0;
   margin-top: auto;
 }
 
@@ -201,39 +220,39 @@ body {
 }
 
 .footer-links a {
-  color: white;
+  color: #dce5dc;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
-  color: #667eea;
+  color: #f2a08c;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .header .container {
     flex-direction: column;
-    text-align: center;
+    align-items: flex-start;
   }
   
   .nav-brand {
-    width: 100%;
+    width: auto;
   }
   
   .nav-menu {
-    justify-content: center;
+    justify-content: flex-start;
     width: 100%;
+    gap: 15px;
   }
   
   .nav-link {
-    padding: 8px 15px;
-    font-size: 0.9rem;
+    font-size: 0.72rem;
   }
   
   .footer .container {
     flex-direction: column;
-    text-align: center;
+    align-items: flex-start;
   }
 }
 </style>
